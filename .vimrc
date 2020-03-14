@@ -66,6 +66,8 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " nerdtree
 let NERDTreeMinimalUI = 1
+let g:NERDTreeGlyphReadOnly = "RO"
+let g:NERDTreeNodeDelimiter = 1
 
 " Go
 let g:go_fmt_command = "goimports"
