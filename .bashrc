@@ -123,3 +123,8 @@ setxkbmap -option caps:escape
 run-processing() {
 	java ~/Downloads/processingStandalone/processing.py-3056-linux64/processing-py.jar $1
 }
+
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
