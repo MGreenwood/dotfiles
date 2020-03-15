@@ -24,19 +24,12 @@ Plugin 'ctrlpvim/ctrlp.vim.git'
 Plugin 'moll/vim-node.git'
 Plugin 'morhetz/gruvbox'
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
-Plugin 'fatih/vim-go'
 Plugin 'vim-utils/vim-man'
 Plugin 'hotoo/jsgf.vim'
 Plugin 'ajh17/VimCompletesMe.git'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'lyuts/vim-rtags'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jacoborus/tender.vim'
-Plugin 'tomasr/molokai'
-Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'vim-airline/vim-airline'
 Plugin 'mbbill/undotree'
 
 " All of your Plugins must be added before the following line
@@ -143,10 +136,6 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
 autocmd BufEnter *.tsx set filetype=typescript
 
 
