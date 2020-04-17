@@ -2,11 +2,15 @@ set nocompatible              " be iMproved, required
 set exrc
 set noswapfile
 set nobackup
+set nowritebackup
 set encoding=utf-8
 set clipboard=unnamedplus
 set incsearch
 set noshowmode
 set number relativenumber
+set expandtab
+set updatetime=300
+set shortmess+=c
 
 filetype off                  " required
 
@@ -18,6 +22,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin 'ajh17/VimCompletesMe.git'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim.git'
@@ -26,7 +32,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'rust-lang/rust.vim'
 Plugin 'vim-utils/vim-man'
 Plugin 'hotoo/jsgf.vim'
-Plugin 'ajh17/VimCompletesMe.git'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'lyuts/vim-rtags'
 Plugin 'leafgarland/typescript-vim'
@@ -104,7 +109,6 @@ nmap <leader>j :wincmd j<CR>
 nmap <leader>k :wincmd k<CR>
 nmap <leader>l :wincmd l<CR>
 nmap <leader>u :UndotreeShow<CR>
-nmap <silent>; :
 nmap <leader>pf :CtrlP<CR>
 nnoremap <Leader>gd :GoDef<Enter>
 nnoremap <Leader>pt :NERDTreeToggle<Enter>
@@ -113,10 +117,6 @@ nnoremap <silent> <Leader>vr :vertical resize 30<CR>
 nnoremap <silent> <Leader>r+ :vertical resize +5<CR>
 nnoremap <silent> <Leader>r- :vertical resize -5<CR>
 nnoremap <silent> <Leader>r- :vertical resize -5<CR>
-nnoremap <silent> <Leader>;; iif err != nil { <esc>o} <esc>:w<CR>
-nmap <leader><leader> V
-vmap <Leader>y "+y
-vmap <Leader>= <C-W><C-=>
 
 " YCM
 " The best part.
@@ -138,4 +138,24 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd BufEnter *.tsx set filetype=typescript
 
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
+
+" The rest is for CocVim
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
