@@ -36,6 +36,9 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'lyuts/vim-rtags'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'mbbill/undotree'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'vim-syntastic/syntastic'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,6 +83,7 @@ let g:ycm_server_log_level = 'debug'
 let g:ycm_warning_symbol = '.'
 let g:ycm_error_symbol = '..'
 let g:ycm_server_use_vim_stdout = 1
+let g:OmniSharp_server_use_mono = 1
 " DEBUG STUFFS
 
 " ag items.  I need the silent ag.

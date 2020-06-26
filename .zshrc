@@ -4,72 +4,14 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/matt/.oh-my-zsh"
 
-# PROMPT='%m :: %~'
+# Path to zsh completions
+fpath=(~/.zsh_completions $fpath)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-# ORDER
-SPACESHIP_PROMPT_ORDER=(
-  time     #
-  vi_mode  # these sections will be
-  user     # before prompt char
-  host     #
-  char
-  dir
-  git
-  golang
-  docker
-  venv
-  pyenv
-)
-SPACESHIT_USER_SHOW=always
-# USER
-#
-SPACESHIP_USER_SHOW="${SPACESHIP_USER_SHOW:=true}"
-SPACESHIP_USER_PREFIX="${SPACESHIP_USER_PREFIX:="with "}"
-SPACESHIP_USER_SUFFIX="${SPACESHIP_USER_SUFFIX:="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_USER_COLOR="${SPACESHIP_USER_COLOR:="yellow"}"
-SPACESHIP_USER_COLOR_ROOT="${SPACESHIP_USER_COLOR_ROOT:="red"}"
-
-# HOST
-SPACESHIP_HOST_SHOW="${SPACESHIP_HOST_SHOW:=true}"
-SPACESHIP_HOST_PREFIX="${SPACESHIP_HOST_PREFIX:="at "}"
-SPACESHIP_HOST_SUFFIX="${SPACESHIP_HOST_SUFFIX:="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_HOST_COLOR="${SPACESHIP_HOST_COLOR:="green"}"
-
-# GIT
-# Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-# Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-# Unwrap git status from `[...]`
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
-
-# NODE
-SPACESHIP_NODE_PREFIX="node:("
-SPACESHIP_NODE_SUFFIX=") "
-SPACESHIP_NODE_SYMBOL=""
-
-# DOCKER
-SPACESHIP_DOCKER_PREFIX="docker:("
-SPACESHIP_DOCKER_SUFFIX=") "
-SPACESHIP_DOCKER_SYMBOL=""
-
-# VENV
-SPACESHIP_VENV_PREFIX="venv:("
-SPACESHIP_VENV_SUFFIX=") "
-
-# PYENV
-SPACESHIP_PYENV_PREFIX="python:("
-SPACESHIP_PYENV_SUFFIX=") "
-SPACESHIP_PYENV_SYMBOL=""
+ZSH_THEME="simple"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
